@@ -265,7 +265,8 @@ class Eab_CalendarTable_UpcomingCalendarWidget extends Eab_CalendarTable {
 		$css_classes = $event_info['status_class'];
 		$permalink = isset($event_info['blog_id']) ? get_blog_permalink($event_info['blog_id'], $event_info['id']) : get_permalink($event_info['id']);
 		$tstamp = esc_attr(date_i18n("Y-m-d\TH:i:sO", $event_tstamps['start']));
-		$this->_data[] = '<a class="wpmudevevents-upcoming_calendar_widget-event ' . $css_classes . '" href="' . $permalink . '">' .
+		$this->_data[] = '<a class="wpmudevevents-upcoming_calendar_widget-event ' . $css_classes . '" href="' . $permalink . '" title="'.
+			$event_info['title'] .'">' .
 			$event_info['title'] .
 			'<span class="wpmudevevents-upcoming_calendar_widget-event-info"><time datetime="' . $tstamp . '">' .
 				'<var class="eab-date_format-date">' . apply_filters('eab-calendar-upcoming_calendar_widget-start_time', date_i18n(get_option('date_format'), $event_tstamps['start']), $event_tstamps['start'], $event_info['id']) . '</var>' .

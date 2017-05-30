@@ -626,7 +626,7 @@ class Eab_Template {
 
 			$time_date_start = esc_attr(date_i18n("Y-m-d\TH:i:s", $start)) . $timezone;
 			$time_date_end = esc_attr(date_i18n("Y-m-d\TH:i:s", $end)) . $timezone;
-			$content .= apply_filters('eab-events-event_date_string', "<time itemprop='startDate' datetime='{$time_date_start}'>{$start_string}</time> <time itemprop='endDate' datetime='{$time_date_end}'>{$end_string}</time>", $event->get_id(), $start, $end);
+			$content .= apply_filters('eab-events-event_date_string', "<time itemprop='startDate' datetime='{$time_date_start}'>{$start_string}</time> <time itemprop='endDate' datetime='{$time_date_end}'>{$end_string}</time>", $event->get_id(), $start, $end);	  			 	  		 	   
 			/*
 			$content .= apply_filters('eab-events-event_date_string', sprintf(
 				__('On %s <span class="wpmudevevents-date_format-start">from %s</span> <span class="wpmudevevents-date_format-end">to %s</span><br />', Eab_EventsHub::TEXT_DOMAIN),
